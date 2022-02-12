@@ -1,0 +1,31 @@
+@use 'base/variables' as v; // Importar pre-fijo
+@use 'base/mixins' as m; // Importar pre-fijo
+
+.tabs {
+
+    @include m.tablet {
+        display: flex; // Se colocan de izquierda a derecha en la misma fila, sin embargo en un dispositivo más pequeño se colocan de arriba hacia abajo responsive
+    }
+
+    button {
+        background-color: v.$azul; // Color de botón de fondo
+        border: none; // Eliminar 
+        color: v.$blanco; // Color de texto
+        padding: 1rem; // En todas las direcciones para que el texto quede centrado
+        display: block; 
+        width: 100%;
+        margin-bottom: 1rem; // Separación entre los botones
+        text-transform: uppercase; // para que todo sea en MAYUSCULA
+        font-weight: v.$bold; // Para en negritas
+        transition: bacground-color 300ms ease; // ms son milisegundos, una pequeña transcisión 
+
+        &:hover {
+            cursor: pointer; // para que se vea como botones
+            background-color: darken(v.$azul, 10%); // Al colocar el cursor sobre el botón se oscurece un poco el color
+        }
+        &.actual { // para que se realten los colores cambian en el boton donde le doy clic
+            background-color: v.$blanco;
+            color: v.$azul;
+        }
+    }
+}

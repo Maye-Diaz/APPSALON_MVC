@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.listado-servicios {
+    display: grid; // para tener separación 
+    gap: 2rem; // hacia abajo
+    @include m.tablet {
+        @include m.grid(2, 2rem); // dos columnas de los servicios
+    }
+
+    .servicio {
+        background-color: v.$blanco; // fondo
+        padding: 3rem; // espacio hacia adentro del servicio y precio
+        border-radius: 1rem; // esquinas redondas
+        transition-property: transform;
+        transition-duration: 300ms; // 300ms son milisegundos
+        text-align: center;
+
+        &.seleccionado {
+            background-color: v.$azul;
+            p {
+                color: v.$blanco;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.1); // cuando doy clic en un servicio
+        }
+
+        p {
+            color: v.$negro; // texto
+            margin: 0 0 calc(v.$separacion / 4) 0; // distancia entre el servicio y precio
+        }
+        .precio-servicio {
+            color: v.$azul; // texto
+            font-weight: v.$bold; // negrita texto precio
+            font-size: 3rem; // tamaño texto
+            margin: 0; // para que no haya tanto espacio hacia adentro
+        }
+    }
+}

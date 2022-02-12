@@ -1,0 +1,16 @@
+
+.seccion {
+    padding: 5rem 0; // Separación con los botones de arriba
+    display: none; // para que los elimine
+
+    .text-center {
+        text-align: center; // va a centar los textos
+    }
+}
+
+.mostrar { //clase y agrega la funcionalidad
+    display: block;
+}
+.ocultar { //clase y agrega la funcionalidad
+    display: none;
+}

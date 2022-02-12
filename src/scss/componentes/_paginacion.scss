@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.paginacion {
+    padding: v.$separacion 0; // separacion: arriba y abajo, 0: izquierda y derecha.
+
+    @include m.telefono { // En un dispositivo lo va a mostrar de arriba a bajo y en una pantalla grande de izquierda a derecha
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        margin: 0 0 1rem 0; // Eun dispositivo pequeño se va a ver bien los botones de arriba hacia abajo, conespacio entre ellos.
+    }
+}
+.ocultar {
+    //display: none; // Este no sirve porque pone a moverse el botón de siguente y le va a dar una mala experiencia al usuario
+    visibility: hidden; // Simplemente esta oculto el botón de anterior y el de siguente queda en su mismo lugar
+}

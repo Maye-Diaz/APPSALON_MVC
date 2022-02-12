@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.acciones {
+    margin-top: v.$separacion; // Separacion entre el boton y las acciones
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; // para los botones de actualizar y borrar servicios
+    }
+
+    a {
+        color: v.$blanco; // color del texto
+        display: block; // Salto de línea entre los enlaces
+        margin-bottom: calc(v.$separacion / 2); // toma los 5 rem y los divide entre dos.
+        text-align: center;
+    }
+}

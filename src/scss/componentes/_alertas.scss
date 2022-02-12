@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+
+.alerta {
+    padding: calc(v.$separacion / 4);
+    color: v.$blanco;
+    width: 100%;
+    display: block; // para que se coloque una alerta arriba de la otra
+    margin-bottom: 2rem; // para separar las alertas entre ellas
+    text-align: center; // para quer el texto quede centrado
+    font-weight: v.$bold; // para que la letra quede negrita
+    text-transform: uppercase; // texto mas negrita aún se ve más grande
+
+    &.error {
+        background-color: v.$rojo;
+    }
+    &.exito {
+        background-color: v.$verde;
+    }
+}

@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    margin-top: 5rem; // para el password 
+    width: 100%;
+}
+
+.campo {
+    display: flex; // da acceso a las propiedades de flexbox.
+    margin-bottom: 2rem; // para tener separación entre cada uno de los campos, hacia abajo.
+    align-items: center; // para que enten centrados horizontalmente.
+    label {
+        flex: 0 0 10rem; // 0 factor de crecimiento 0strinchs 10rem entre texto y campo.
+    }
+    input {
+        flex: 1; // ese 1 va hacer que se de el resto del tamaño.
+        border: none;
+        padding: calc(v.$separacion / 4);
+        border-radius: 1rem; // Border
+
+        &:disabled {
+            background-color: lighten(v.$negro, 30%); // aclara el campo de nombre  
+            color: v.$blanco; // color texto
+            cursor: not-allowed; // cambia el puntero a no permitido aparece el signo
+        }
+    }
+
+}
